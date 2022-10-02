@@ -11,7 +11,9 @@
 
     Sneaker Company
 
-    Fall Limited Edition Sneakers
+    <div class="font-bold">
+      Fall Limited Edition Sneakers
+    </div>
 
     These low-profile sneakers are your perfect casual wear companion. Featuring a
     durable rubber outer sole, they’ll withstand everything the weather can offer.
