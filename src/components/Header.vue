@@ -25,11 +25,12 @@
                 </button>
             </div>
         </nav>
+        <CartVue />
     </header>
 </template>
 
 <script setup>
-
+import CartVue from './Cart.vue';
 </script>
 
 <style lang="scss" scoped>
