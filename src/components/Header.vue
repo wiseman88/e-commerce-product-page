@@ -17,7 +17,7 @@
                 </ul>
             </div>
             <div class="flex">
-                <button class="mr-[22px]">
+                <button class="mr-[22px]" @click="showCart">
                     <img src="../assets/images/icon-cart.svg" alt="cart">
                 </button>
                 <button>
@@ -25,12 +25,20 @@
                 </button>
             </div>
         </nav>
-        <CartVue />
+        <CartVue :show="show" />
     </header>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import CartVue from './Cart.vue';
+
+const show = ref(false);
+
+const showCart = () => {
+    show.value = !show.value;
+}
+
 </script>
 
 <style lang="scss" scoped>

@@ -1,5 +1,8 @@
 <template>
-    <div id="cart" class="absolute w-[360px] right-2 rounded-lg bg-white">
+    <div 
+        id="cart" 
+        class="absolute w-[360px] right-2 rounded-lg bg-white"
+        :class="show ? '' : 'hidden'" >
         <div class="cart-top px-6 pt-5 pb-[23px] border-gray-100 border-b-[1px]">
             <h3 class="font-semibold">
                 Cart
@@ -9,11 +12,18 @@
             <p class="font-semibold">
                 Your cart is empty.
             </p>
+            <p>
+                {{ show }}
+            </p>
         </div>
     </div>
 </template>
 
 <script setup>
+
+    const props = defineProps({
+        show: Boolean
+    })
 
 </script>
 
