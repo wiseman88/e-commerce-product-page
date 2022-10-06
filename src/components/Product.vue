@@ -36,13 +36,21 @@
     >
       <button>
         <figure>
-          <img src="../assets/images/icon-minus.svg" alt="minus" />
+          <img
+            src="../assets/images/icon-minus.svg"
+            alt="minus"
+            @click="counter.decrement"
+          />
         </figure>
       </button>
-      <span> 0 </span>
+      <span> {{ counter.count }} </span>
       <button>
         <figure>
-          <img src="../assets/images/icon-plus.svg" alt="plus" />
+          <img
+            src="../assets/images/icon-plus.svg"
+            alt="plus"
+            @click="counter.increment"
+          />
         </figure>
       </button>
     </div>
@@ -57,6 +65,10 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useCounterStore } from "../stores/counter";
+
+const counter = useCounterStore();
+</script>
 
 <style lang="scss" scoped></style>
