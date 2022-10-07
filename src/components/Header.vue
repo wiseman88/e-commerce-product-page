@@ -18,7 +18,7 @@
             </div>
             <div class="flex">
                 <button class="mr-[22px]" @click="showCart">
-                    <SvgCart />
+                    <SvgCart :fillColor="fillColor" />
                 </button>
                 <button>
                     <img class="w-6" src="../assets/images/image-avatar.png" alt="avatar">
@@ -38,6 +38,7 @@ import SvgCart from './SvgCart.vue';
 
 const show = ref(false);
 const display = ref(false);
+const fillColor = "#69707D";
 
 const showCart = () => {
     show.value = !show.value;
