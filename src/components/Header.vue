@@ -18,7 +18,8 @@
             </div>
             <div class="flex">
                 <button class="mr-[22px]" @click="showCart">
-                    <SvgCart :fillColor="fillColor" />
+                    <SvgCart :fillColor="fillColor" @mouseover="toggleColor(activeSvgColor)"
+                        @mouseleave="toggleColor(svgColor)" />
                 </button>
                 <button>
                     <img class="w-6" src="../assets/images/image-avatar.png" alt="avatar">
@@ -38,7 +39,9 @@ import SvgCart from './SvgCart.vue';
 
 const show = ref(false);
 const display = ref(false);
-const fillColor = "#69707D";
+const activeSvgColor = '#69707D';
+const svgColor = 'hsl(220, 14%, 75%)';
+let fillColor = ref(svgColor);
 
 const showCart = () => {
     show.value = !show.value;
@@ -48,6 +51,9 @@ const showSidebar = () => {
     display.value = !display.value;
 }
 
+const toggleColor = (color) => {
+    show.value === true ? fillColor.value = activeSvgColor : fillColor.value = color;
+}
 </script>
 
 <style lang="scss" scoped>
