@@ -57,8 +57,8 @@
     <button
       class="w-full flex items-center justify-center text-center text-white bg-orange shadow-orange/30 shadow-xl rounded-lg p-4 font-bold"
     >
-      <figure>
-        <img src="../assets/images/icon-cart.svg" class="mr-4 text-white" alt="cart" />
+      <figure class="mr-4">
+        <SvgCart />
       </figure>
       <span class="tracking-wide"> Add to cart </span>
     </button>
@@ -67,6 +67,7 @@
 
 <script setup>
 import { useCounterStore } from "../stores/counter";
+import SvgCart from "./SvgCart.vue";
 
 const counter = useCounterStore();
 </script>
