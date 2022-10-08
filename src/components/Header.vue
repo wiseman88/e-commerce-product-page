@@ -45,6 +45,7 @@ let fillColor = ref(svgColor);
 
 const showCart = () => {
     show.value = !show.value;
+    toggleColor(activeSvgColor);
 }
 
 const showSidebar = () => {
