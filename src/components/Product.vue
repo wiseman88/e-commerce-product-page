@@ -1,6 +1,6 @@
 <template>
   <div id="product-slider">
-    <img src="../assets/images/image-product-1.jpg" alt="product_1" class="object-cover w-full h-[300px]" />
+    <Carousel />
   </div>
   <div class="product-info p-6">
     <h4 class="product-title text-orange text-[12px] uppercase tracking-widest font-bold mb-2">
@@ -50,6 +50,7 @@
 <script setup>
 import { useCounterStore } from "../stores/counter";
 import SvgCart from "./SvgCart.vue";
+import Carousel from "./Carousel.vue";
 
 let fillColor = '#fff';
 
