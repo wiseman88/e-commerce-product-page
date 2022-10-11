@@ -7,19 +7,20 @@
       <span>Sneaker Company</span>
     </h4>
     <h2 class="text-very-dark-blue text-[27px] leading-8 font-bold mb-4">
-      {{product.name}}
+      {{ product.data.name }}
     </h2>
 
     <p class="product-description text-dark-grayish-blue mb-6">
-      {{ product.description }}
+      {{ product.data.description }}
     </p>
 
     <div class="product-price flex items-center justify-between font-bold mb-5">
       <div class="flex items-center">
         <span class="text-[27px] tracking-wider mr-4">${{ discountPrice.toFixed(2) }}</span>
-        <span class="flex-start px-2.5 py-[1px] text-orange bg-pale-orange rounded-lg">{{product.discount}}%</span>
+        <span class="flex-start px-2.5 py-[1px] text-orange bg-pale-orange rounded-lg">{{ product.data.discount
+        }}%</span>
       </div>
-      <span class="text-grayish-blue line-through"> ${{product.price.toFixed(2)}} </span>
+      <span class="text-grayish-blue line-through"> ${{ product.data.price.toFixed(2) }} </span>
     </div>
 
     <div
@@ -48,6 +49,7 @@
 
 <script setup>
 import { useCounterStore } from "../stores/counter";
+import { useProductStore } from "../stores/product";
 import SvgCart from "./SvgCart.vue";
 import Carousel from "./Carousel.vue";
 import { computed } from "vue";
@@ -55,16 +57,10 @@ import { computed } from "vue";
 let fillColor = '#fff';
 
 const counter = useCounterStore();
-
-const product = {
-  "name": "Fall Limited Edition Sneakers",
-  "description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
-  "price": 250,
-  "discount": 50,
-}
+const product = useProductStore();
 
 const discountPrice = computed(() => {
-  return product.price - product.price / 100 * product.discount;
+  return product.data.price - product.data.price / 100 * product.data.discount;
 })
 </script>
 
