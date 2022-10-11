@@ -16,10 +16,10 @@
 
     <div class="product-price flex items-center justify-between font-bold mb-5">
       <div class="flex items-center">
-        <span class="text-[27px] tracking-wider mr-4">${{ discountPrice }}.00</span>
+        <span class="text-[27px] tracking-wider mr-4">${{ discountPrice.toFixed(2) }}</span>
         <span class="flex-start px-2.5 py-[1px] text-orange bg-pale-orange rounded-lg">{{product.discount}}%</span>
       </div>
-      <span class="text-grayish-blue line-through"> ${{product.price}} </span>
+      <span class="text-grayish-blue line-through"> ${{product.price.toFixed(2)}} </span>
     </div>
 
     <div
@@ -59,7 +59,7 @@ const counter = useCounterStore();
 const product = {
   "name": "Fall Limited Edition Sneakers",
   "description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.",
-  "price": "250.00",
+  "price": 250,
   "discount": 50,
 }
 
