@@ -37,13 +37,12 @@
         </figure>
       </button>
     </div>
-    <button
-      class="w-full flex items-center justify-center text-center text-white bg-orange shadow-orange/30 shadow-xl rounded-lg p-4 font-bold">
+    <Button>
       <figure class="mr-4">
         <SvgCart :fillColor="fillColor" />
       </figure>
-      <span class="tracking-wide"> Add to cart </span>
-    </button>
+      <span> Add to cart </span>
+    </Button>
   </div>
 </template>
 
@@ -53,6 +52,7 @@ import { useProductStore } from "../stores/product";
 import SvgCart from "./SvgCart.vue";
 import Carousel from "./Carousel.vue";
 import { computed } from "vue";
+import Button from "./Button.vue";
 
 let fillColor = '#fff';
 
