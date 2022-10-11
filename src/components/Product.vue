@@ -16,13 +16,12 @@
 
     <div class="product-price flex items-center justify-between font-bold mb-5">
       <div class="flex items-center">
-        <span class="text-[27px] tracking-wider mr-4">${{ discountPrice.toFixed(2) }}</span>
+        <span class="text-[27px] tracking-wider mr-4">${{ product.discountPrice }}</span>
         <span class="flex-start px-2.5 py-[1px] text-orange bg-pale-orange rounded-lg">{{ product.data.discount
         }}%</span>
       </div>
       <span class="text-grayish-blue line-through"> ${{ product.data.price.toFixed(2) }} </span>
     </div>
-
     <div
       class="product-counter flex justify-between items-center px-4 py-4 bg-light-grayish-blue text-center font-bold rounded-lg mb-4">
       <button>
@@ -37,7 +36,7 @@
         </figure>
       </button>
     </div>
-    <Button>
+    <Button @click="product.addToCart">
       <figure class="mr-4">
         <SvgCart :fillColor="fillColor" />
       </figure>
@@ -59,9 +58,6 @@ let fillColor = '#fff';
 const counter = useCounterStore();
 const product = useProductStore();
 
-const discountPrice = computed(() => {
-  return product.data.price - product.data.price / 100 * product.data.discount;
-})
 </script>
 
 <style lang="scss" scoped>
