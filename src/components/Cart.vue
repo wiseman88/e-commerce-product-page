@@ -1,9 +1,5 @@
 <template>
-  <div
-    id="cart"
-    class="absolute w-[360px] top-[76px] right-2 rounded-lg bg-white"
-    :class="show ? '' : 'hidden'"
-  >
+  <div id="cart" class="absolute z-50 w-[360px] top-[76px] right-2 rounded-lg bg-white" :class="show ? '' : 'hidden'">
     <div class="cart-top px-6 pt-5 pb-[23px] border-[#E8E7EC] border-b-[1px]">
       <h3 class="font-semibold">Cart</h3>
     </div>
@@ -21,4 +17,6 @@ const props = defineProps({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>
