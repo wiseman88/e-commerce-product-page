@@ -36,18 +36,19 @@
         </figure>
       </button>
     </div>
-    <Button @click="product.addToCart">
+    <Button @click="checkProductCount">
       <figure class="mr-4">
         <SvgCart :fillColor="fillColor" />
       </figure>
       <span> Add to cart </span>
     </Button>
+    {{ product.inCart }}
   </div>
 </template>
 
 <script setup>
-import { useCounterStore } from "../stores/counter";
 import { useProductStore } from "../stores/product";
+import { useCounterStore } from "../stores/counter";
 import SvgCart from "./SvgCart.vue";
 import Carousel from "./Carousel.vue";
 import { computed } from "vue";
@@ -57,6 +58,10 @@ let fillColor = '#fff';
 
 const counter = useCounterStore();
 const product = useProductStore();
+
+const checkProductCount = () => {
+  counter.count > 0 ? product.addToCart() : null
+}
 
 </script>
 
