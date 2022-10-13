@@ -17,7 +17,11 @@
                 </ul>
             </div>
             <div class="flex">
-                <button class="mr-[22px]" @click="showCart">
+                <button class="relative mr-[22px]" @click="showCart">
+                    <span v-if="product.inCart"
+                        class="absolute top-[-3px] right-[-6px] text-[9px] px-[7px] rounded-[6px] font-bold bg-orange text-white">
+                        {{ counter.count }}
+                    </span>
                     <SvgCart :fillColor="fillColor" @mouseover="toggleColor(activeSvgColor)"
                         @mouseleave="toggleColor(svgColor)" />
                 </button>
@@ -33,6 +37,8 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useCounterStore } from '../stores/counter';
+import { useProductStore } from '../stores/product';
 import Cart from './Cart.vue';
 import Sidebar from './Sidebar.vue';
 import SvgCart from './SvgCart.vue';
@@ -55,6 +61,9 @@ const showSidebar = () => {
 const toggleColor = (color) => {
     show.value === true ? fillColor.value = activeSvgColor : fillColor.value = color;
 }
+
+const counter = useCounterStore();
+const product = useProductStore();
 </script>
 
 <style lang="scss" scoped>
