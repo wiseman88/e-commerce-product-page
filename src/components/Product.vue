@@ -42,7 +42,6 @@
       </figure>
       <span> Add to cart </span>
     </Button>
-    {{ product.inCart }}
   </div>
 </template>
 

@@ -20,6 +20,9 @@ export const useProductStore = defineStore({
     actions: {
         addToCart() {
             this.inCart = true;
+        },
+        removeFromCart() {
+            this.inCart = false;
         }
     }
 })
