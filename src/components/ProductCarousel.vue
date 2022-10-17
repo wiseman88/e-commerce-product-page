@@ -1,5 +1,5 @@
 <template>
-    <div class="carousel-wrapper relative">
+    <div class="products-slider-wrapper relative">
         <Carousel ref="carousel" v-model="currentSlide">
             <Slide v-for="slide in images" :key="slide">
                 <img :src="slide.image" alt="product_1" class="object-cover w-full h-[300px]" />
