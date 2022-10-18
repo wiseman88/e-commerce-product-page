@@ -1,6 +1,6 @@
 <template>
     <nav
-        class="px-6 pt-5 pb-6 md:pt-[43px] md:pb-[45px] md:border-grayish-blue md:border-b-[1px] flex items-center justify-between">
+        class="px-6 pt-5 pb-6 md:px-0 md:pt-[43px] md:pb-[45px] md:border-grayish-blue md:border-b-[1px] flex items-center justify-between">
         <div class="flex">
             <button class="md:hidden mr-4" @click="header.showSidebar()">
                 <img src="../assets/images/icon-menu.svg" alt="menu">
