@@ -1,5 +1,5 @@
 <template>
-  <div class="block lg:flex">
+  <div class="block md:flex md:mt-[90px]">
     <ProductCarousel />
     <ProductData />
   </div>

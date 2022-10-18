@@ -1,5 +1,5 @@
 <template>
-    <div class="products-slider-wrapper relative">
+    <div class="products-slider-wrapper relative md:hidden">
         <Carousel ref="carousel" v-model="currentSlide">
             <Slide v-for="slide in images" :key="slide">
                 <img :src="slide.image" alt="product_1" class="object-cover w-full h-[300px]" />
@@ -16,6 +16,20 @@
                 @click="currentSlide++">
                 <figure>
                     <img class="mx-auto ml-[16px] w-[9px]" src="../assets/images/icon-next.svg" alt="next">
+                </figure>
+            </button>
+        </div>
+    </div>
+    <div>
+        <a href="#" class="block w-[445px] mb-[30px]">
+            <figure>
+                <img :src="mainImageUrl" alt="" class="rounded-[14px]">
+            </figure>
+        </a>
+        <div class="product-images-navigation flex justify-between">
+            <button v-for="item in images" :key="item.id" class="group w-[88px]" @click="setImageUrl($event)">
+                <figure>
+                    <img :src="item.image" :alt="item.id" class="rounded-[9px] group-hover:opacity-40">
                 </figure>
             </button>
         </div>
@@ -51,6 +65,12 @@ const images = [
         'thumbnail': "/src/assets/images/image-product-4-thumbnail.jpg"
     },
 ]
+
+let mainImageUrl = ref(images[0].image);
+
+const setImageUrl = (event) => {
+    mainImageUrl.value = event.target.src;
+}
 
 </script>
 
