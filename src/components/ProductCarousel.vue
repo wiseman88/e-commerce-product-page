@@ -27,9 +27,10 @@
             </figure>
         </a>
         <div class="product-images-navigation flex justify-between">
-            <button v-for="item in images" :key="item.id" class="group w-[88px]" @click="setImageUrl($event)">
+            <button v-for="(item, index) in images" :key="index"
+                class="product-button group w-[92px] rounded-[10px] overflow-hidden" @click="setImageUrl($event)">
                 <figure>
-                    <img :src="item.image" :alt="item.id" class="rounded-[9px] group-hover:opacity-40">
+                    <img :src="item.image" :alt="index" class="product-image" :class="{ 'active': index === 0 }">
                 </figure>
             </button>
         </div>
@@ -69,11 +70,33 @@ const images = [
 let mainImageUrl = ref(images[0].image);
 
 const setImageUrl = (event) => {
+    let imgElements = document.querySelectorAll('.product-image');
+
+    imgElements.forEach(img => {
+        console.log(img.classList.remove('active'));
+    });
+
     mainImageUrl.value = event.target.src;
+
+    event.target.classList.add('active');
 }
 
 </script>
 
 <style scoped>
+.product-button {
+    border: 2px solid transparent;
+}
 
+.product-button:has(.product-image.active) {
+    border: 2px solid hsl(26, 100%, 55%);
+}
+
+.product-image:hover {
+    opacity: 0.5;
+}
+
+.product-image.active {
+    opacity: 0.4;
+}
 </style>
