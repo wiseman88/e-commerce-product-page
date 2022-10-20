@@ -20,7 +20,7 @@
             </button>
         </div>
     </div>
-    <div>
+    <div class="hidden md:block">
         <a href="#" class="block w-[445px] mb-[30px]">
             <figure>
                 <img :src="mainImageUrl" alt="" class="rounded-[14px]">
