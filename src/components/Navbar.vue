@@ -9,7 +9,7 @@
                 <img src="../assets/images/logo.svg" alt="logo">
             </span>
             <ul class="hidden md:flex text-dark-grayish-blue">
-                <li v-for="item in navigation" class="relative group mr-[34px] hover:text-very-dark-blue"><a href="#">{{
+                <li v-for="item in navigation" class="relative group mr-8 hover:text-very-dark-blue"><a href="#">{{
                 item.name
                 }}</a>
                     <span class="absolute bottom-[-58px] left-0 h-1 w-full bg-transparent group-hover:bg-orange"></span>
