@@ -37,12 +37,14 @@
             </div>
         </div>
     </div>
+    <ProductLightbox />
 </template>
 
 <script setup>
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import { ref } from 'vue';
+import ProductLightbox from './ProductLightbox.vue';
 
 const currentSlide = ref(1);
 

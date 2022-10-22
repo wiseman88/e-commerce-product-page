@@ -11,7 +11,8 @@ export const useProductStore = defineStore({
                 "price": 250,
                 "discount": 50,
             },
-            inCart: false
+            inCart: false,
+            lightboxShow: false,
         }
     },
     getters: {
