@@ -11,8 +11,7 @@ export const useProductStore = defineStore({
                 "price": 250,
                 "discount": 50,
             },
-            inCart: false,
-            lightboxShow: false,
+            imgUrl: '',
             images: [
                 {
                     "id": 1,
@@ -34,11 +33,14 @@ export const useProductStore = defineStore({
                     "image": "/src/assets/images/image-product-4.jpg",
                     'thumbnail': "/src/assets/images/image-product-4-thumbnail.jpg"
                 },
-            ]
+            ],
+            inCart: false,
+            lightboxShow: false,
         }
     },
     getters: {
-        discountPrice: (state) => (state.data.price - state.data.price / 100 * state.data.discount).toFixed(2)
+        discountPrice: (state) => (state.data.price - state.data.price / 100 * state.data.discount).toFixed(2),
+        mainImageUrl: (state) => state.imgUrl ? state.imgUrl : state.images[0].image
     },
     actions: {
         addToCart() {
@@ -46,6 +48,14 @@ export const useProductStore = defineStore({
         },
         removeFromCart() {
             this.inCart = false;
+        },
+        setImageUrl(event) {
+            let imgElements = document.querySelectorAll('.product-image');
+            imgElements.forEach(img => {
+                img.classList.remove('active');
+            });
+            this.imgUrl = event.target.src;
+            event.target.classList.add('active');
         }
     }
 })
