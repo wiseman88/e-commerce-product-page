@@ -1,9 +1,9 @@
 <template>
     <div>
         <div class="hidden md:block">
-            <a href="#" class="block">
+            <a href="#" @click.prevent="product.lightboxShow = true" class="block">
                 <figure>
-                    <img :src="product.mainImageUrl" alt="" class="rounded-[14px] w-[445px] mb-[30px]">
+                    <img :src="product.mainImageUrl" alt="" class="rounded-[14px]" :class="styles">
                 </figure>
             </a>
             <div class=" product-images-navigation flex justify-between">
@@ -21,6 +21,10 @@
 
 <script setup>
 import { useProductStore } from '../stores/product';
+
+defineProps({
+    styles: String,
+})
 
 const product = useProductStore();
 </script>

@@ -21,7 +21,7 @@
                 </button>
             </div>
         </div>
-        <ProductImageView></ProductImageView>
+        <ProductImageView :styles="'w-[445px] mb-[30px]'"></ProductImageView>
     </div>
     <ProductLightbox />
 </template>
