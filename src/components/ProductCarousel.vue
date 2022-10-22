@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="hidden md:block">
-            <a href="#" class="block w-[445px] mb-[30px]">
+            <a href="#" @click.prevent="product.lightboxShow = true" class="block w-[445px] mb-[30px]">
                 <figure>
                     <img :src="mainImageUrl" alt="" class="rounded-[14px]">
                 </figure>
@@ -45,9 +45,10 @@ import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 import { ref } from 'vue';
 import ProductLightbox from './ProductLightbox.vue';
+import { useProductStore } from '../stores/product';
 
 const currentSlide = ref(1);
-
+const product = useProductStore();
 const images = [
     {
         "id": 1,
