@@ -1,5 +1,5 @@
 <template>
-    <div class="product-info p-6 md:mt-[39px] md:mr-[23px]">
+    <div class="product-info p-6 md:mt-[39px] md:mr-[23px] md:w-[494px]">
         <h4 class="product-title text-orange text-[12px] uppercase tracking-widest font-bold mb-2 md:mb-6">
             <span>Sneaker Company</span>
         </h4>
