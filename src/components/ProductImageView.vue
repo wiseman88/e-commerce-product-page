@@ -1,12 +1,12 @@
 <template>
     <div>
         <div class="hidden md:block">
-            <a href="#" @click.prevent="product.lightboxShow = true" class="block">
+            <a href="#" @click.prevent="product.lightboxShow = true" class="flex justify-center">
                 <figure>
                     <img :src="product.mainImageUrl" alt="" class="rounded-[14px]" :class="styles">
                 </figure>
             </a>
-            <div class=" product-images-navigation flex justify-between">
+            <div class=" product-images-navigation flex justify-between w-[445px] mx-auto">
                 <button v-for="(item, index) in product.images" :key="index"
                     class="product-button group w-[92px] rounded-[10px] overflow-hidden"
                     @click="product.setImageUrl($event)">
