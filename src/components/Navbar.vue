@@ -1,6 +1,6 @@
 <template>
     <nav
-        class="px-6 pt-5 pb-6 md:px-0 md:pt-[43px] md:pb-[45px] md:border-grayish-blue md:border-b-[1px] flex items-center justify-between">
+        class="px-6 pt-5 pb-6 md:px-0 md:pt-[28px] md:pb-[34px] md:border-grayish-blue md:border-b-[1px] flex items-center justify-between">
         <div class="flex">
             <button class="md:hidden mr-4" @click="header.showSidebar()">
                 <img src="../assets/images/icon-menu.svg" alt="menu">
@@ -10,7 +10,7 @@
             </span>
             <ul class="hidden md:flex text-dark-grayish-blue">
                 <li v-for="item in navigation" class="relative group mr-8 hover:text-very-dark-blue"><a href="#">{{
-                item.name
+                        item.name
                 }}</a>
                     <span class="absolute bottom-[-58px] left-0 h-1 w-full bg-transparent group-hover:bg-orange"></span>
                 </li>
