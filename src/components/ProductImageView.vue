@@ -29,7 +29,7 @@ defineProps({
 const product = useProductStore();
 </script>
 
-<style scoped>
+<style>
 .product-button {
     border: 2px solid transparent;
 }
