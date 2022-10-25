@@ -10,8 +10,8 @@
 
 const props = defineProps({
     fillColor: String,
-    width: Number,
-    height: Number
+    width: [Number, String],
+    height: [Number, String]
 });
 </script>
 
