@@ -10,9 +10,21 @@
                         :fill="fillColor" fill-rule="evenodd" />
                 </Svg>
             </button>
-            <figure class="mb-[40px]">
-                <img :src="imageUrl" alt="" class="rounded-[14px] w-full">
-            </figure>
+            <div class="relative">
+                <figure class="mb-[40px]">
+                    <img :src="imageUrl" alt="" class="rounded-[14px] w-full">
+                </figure>
+                <button class="absolute top-1/2 -left-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white">
+                    <figure>
+                        <img class="mx-auto mr-[16px] w-[9px]" src="../assets/images/icon-previous.svg" alt="prev">
+                    </figure>
+                </button>
+                <button class="absolute top-1/2 -right-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white">
+                    <figure>
+                        <img class="mx-auto ml-[16px] w-[9px]" src="../assets/images/icon-next.svg" alt="next">
+                    </figure>
+                </button>
+            </div>
             <div class=" product-images-navigation flex justify-between w-[445px] mx-auto">
                 <button v-for="(item, index) in productGallery" :key="index"
                     class="product-button group w-[92px] rounded-[10px] overflow-hidden" @click="setImgUrl($event)">
