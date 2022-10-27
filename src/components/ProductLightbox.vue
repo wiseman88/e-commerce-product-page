@@ -12,14 +12,14 @@
             </button>
             <div class="relative">
                 <figure class="mb-[40px]">
-                    <img :src="imageUrl" alt="" class="rounded-[14px] w-full">
+                    <img :src="imageUrl" :alt="galleryItem" class="rounded-[14px] w-full">
                 </figure>
-                <button class="absolute top-1/2 -left-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white">
+                <button class="absolute top-1/2 -left-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white" @click="prevImage(galleryItem)">
                     <figure>
                         <img class="mx-auto mr-[16px] w-[9px]" src="../assets/images/icon-previous.svg" alt="prev">
                     </figure>
                 </button>
-                <button class="absolute top-1/2 -right-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white">
+                <button class="absolute top-1/2 -right-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white" @click="nextImage(galleryItem)">
                     <figure>
                         <img class="mx-auto ml-[16px] w-[9px]" src="../assets/images/icon-next.svg" alt="next">
                     </figure>
@@ -29,7 +29,7 @@
                 <button v-for="(item, index) in productGallery" :key="index"
                     class="product-button group w-[92px] rounded-[10px] overflow-hidden" @click="setImgUrl($event)">
                     <figure>
-                        <img :src="item.image" :alt="index" class="product-image" :class="{ 'active': index === 0 }">
+                        <img :src="item.image" :alt="index" class="product-image" :class="{'active': item.image === imageUrl}">
                     </figure>
                 </button>
             </div>
@@ -68,17 +68,31 @@ let productGallery = [
 ]
 
 let imageUrl = ref(productGallery[0].image);
+let galleryItem = ref(0)
 let fillColor = ref('#fff');
 
 const setImgUrl = (event) => {
-    let imgElements = document.querySelectorAll('.product-image');
-    imgElements.forEach(img => {
-        img.classList.remove('active');
-    });
     imageUrl.value = event.target.src;
+}
 
-    console.log(event.target)
-    event.target.classList.add('active');
+const nextImage = (id) => {
+    if (id < productGallery.length - 1) {
+        id++;
+        imageUrl.value = productGallery[id].image;
+        galleryItem.value = id;
+    } else {
+        return;
+    }
+}
+
+const prevImage = (id) => {
+    if (id > 0) {
+        id--;
+        imageUrl.value = productGallery[id].image;
+        galleryItem.value = id;
+    } else {
+        return;
+    }
 }
 </script>
 
