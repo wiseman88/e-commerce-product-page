@@ -14,12 +14,14 @@
                 <figure class="mb-[40px]">
                     <img :src="imageUrl" :alt="galleryItem" class="rounded-[14px] w-full">
                 </figure>
-                <button class="absolute top-1/2 -left-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white" @click="prevImage(galleryItem)">
+                <button class="absolute top-1/2 -left-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white"
+                    @click="prevImage(galleryItem)">
                     <figure>
                         <img class="mx-auto mr-[16px] w-[9px]" src="../assets/images/icon-previous.svg" alt="prev">
                     </figure>
                 </button>
-                <button class="absolute top-1/2 -right-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white" @click="nextImage(galleryItem)">
+                <button class="absolute top-1/2 -right-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white"
+                    @click="nextImage(galleryItem)">
                     <figure>
                         <img class="mx-auto ml-[16px] w-[9px]" src="../assets/images/icon-next.svg" alt="next">
                     </figure>
@@ -29,7 +31,8 @@
                 <button v-for="(item, index) in productGallery" :key="index"
                     class="product-button group w-[92px] rounded-[10px] overflow-hidden" @click="setImgUrl($event)">
                     <figure>
-                        <img :src="item.image" :alt="index" class="product-image" :class="{'active': item.image === imageUrl}">
+                        <img :src="item.image" :alt="index" class="product-image"
+                            :class="{ 'active': item.image === imageUrl }">
                     </figure>
                 </button>
             </div>
@@ -72,7 +75,8 @@ let galleryItem = ref(0)
 let fillColor = ref('#fff');
 
 const setImgUrl = (event) => {
-    imageUrl.value = event.target.src;
+    imageUrl.value = event.target.attributes.src.value;
+    galleryItem.value = event.target.alt;
 }
 
 const nextImage = (id) => {
