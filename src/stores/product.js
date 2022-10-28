@@ -56,6 +56,9 @@ export const useProductStore = defineStore({
             });
             this.imgUrl = event.target.src;
             event.target.classList.add('active');
+        },
+        showLightbox() {
+            this.lightboxShow = !this.lightboxShow;
         }
     }
 })
