@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useLightboxStore } from "./lightbox";
 
 export const useProductStore = defineStore({
     id: 'product',
@@ -12,6 +13,7 @@ export const useProductStore = defineStore({
                 "discount": 50,
             },
             imgUrl: '',
+            imgId: '',
             images: [
                 {
                     "id": 1,
@@ -40,7 +42,7 @@ export const useProductStore = defineStore({
     },
     getters: {
         discountPrice: (state) => (state.data.price - state.data.price / 100 * state.data.discount).toFixed(2),
-        mainImageUrl: (state) => state.imgUrl ? state.imgUrl : state.images[0].image
+        mainImageUrl: (state) => state.imgUrl ? state.imgUrl : state.images[0].image,
     },
     actions: {
         addToCart() {
@@ -51,9 +53,13 @@ export const useProductStore = defineStore({
         },
         setImageUrl(event) {
             this.imgUrl = event.target.attributes.src.value;
+            this.imgId = event.target.alt;
         },
         showLightbox() {
+            const lightbox = useLightboxStore();
             this.lightboxShow = !this.lightboxShow;
+            lightbox.imgUrl = this.imgUrl;
+            lightbox.imgId = this.imgId;
         }
     }
 })
