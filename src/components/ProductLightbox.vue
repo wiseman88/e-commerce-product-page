@@ -12,92 +12,37 @@
             </button>
             <div class="relative">
                 <figure class="mb-[40px]">
-                    <img :src="imageUrl" :alt="galleryItem" class="rounded-[14px] w-full">
+                    <img :src="lightbox.mainImageUrl" :alt="lightbox.mainImageId" class="rounded-[14px] w-full">
                 </figure>
                 <button class="absolute top-1/2 -left-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white"
-                    @click="prevImage(galleryItem)">
+                    @click="lightbox.prevImage">
                     <figure>
                         <img class="mx-auto mr-[16px] w-[9px]" src="../assets/images/icon-previous.svg" alt="prev">
                     </figure>
                 </button>
                 <button class="absolute top-1/2 -right-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white"
-                    @click="nextImage(galleryItem)">
+                    @click="lightbox.nextImage">
                     <figure>
                         <img class="mx-auto ml-[16px] w-[9px]" src="../assets/images/icon-next.svg" alt="next">
                     </figure>
                 </button>
             </div>
-            <div class=" product-images-navigation flex justify-between w-[445px] mx-auto">
-                <button v-for="(item, index) in productGallery" :key="index"
-                    class="product-button group w-[92px] rounded-[10px] overflow-hidden" @click="setImgUrl($event)">
-                    <figure>
-                        <img :src="item.image" :alt="index" class="product-image"
-                            :class="{ 'active': item.image === imageUrl }">
-                    </figure>
-                </button>
-            </div>
+            <ProductListNavigation :product="lightbox" />
         </div>
     </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import { useLightboxStore } from "../stores/lightbox";
 import { useProductStore } from "../stores/product";
+import ProductListNavigation from "./ProductListNavigation.vue";
 import Svg from "./Svg.vue";
 
 const product = useProductStore();
+const lightbox = useLightboxStore();
 
-let productGallery = [
-    {
-        "id": 1,
-        "image": "/src/assets/images/image-product-1.jpg",
-        'thumbnail': "/src/assets/images/image-product-1-thumbnail.jpg"
-    },
-    {
-        "id": 2,
-        "image": "/src/assets/images/image-product-2.jpg",
-        'thumbnail': "/src/assets/images/image-product-2-thumbnail.jpg"
-    },
-    {
-        "id": 3,
-        "image": "/src/assets/images/image-product-3.jpg",
-        'thumbnail': "/src/assets/images/image-product-3-thumbnail.jpg"
-    },
-    {
-        "id": 4,
-        "image": "/src/assets/images/image-product-4.jpg",
-        'thumbnail': "/src/assets/images/image-product-4-thumbnail.jpg"
-    },
-]
-
-let imageUrl = ref(productGallery[0].image);
-let galleryItem = ref(0)
 let fillColor = ref('#fff');
-
-const setImgUrl = (event) => {
-    imageUrl.value = event.target.attributes.src.value;
-    galleryItem.value = event.target.alt;
-}
-
-const nextImage = (id) => {
-    if (id < productGallery.length - 1) {
-        id++;
-        imageUrl.value = productGallery[id].image;
-        galleryItem.value = id;
-    } else {
-        return;
-    }
-}
-
-const prevImage = (id) => {
-    if (id > 0) {
-        id--;
-        imageUrl.value = productGallery[id].image;
-        galleryItem.value = id;
-    } else {
-        return;
-    }
-}
 </script>
 
 <style scoped>
