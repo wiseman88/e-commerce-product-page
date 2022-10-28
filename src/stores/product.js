@@ -50,12 +50,7 @@ export const useProductStore = defineStore({
             this.inCart = false;
         },
         setImageUrl(event) {
-            let imgElements = document.querySelectorAll('.product-image');
-            imgElements.forEach(img => {
-                img.classList.remove('active');
-            });
-            this.imgUrl = event.target.src;
-            event.target.classList.add('active');
+            this.imgUrl = event.target.attributes.src.value;
         },
         showLightbox() {
             this.lightboxShow = !this.lightboxShow;
