@@ -2,7 +2,7 @@
     <div class="fixed flex items-center justify-center z-20 inset-0 bg-black/75"
         :class="product.lightboxShow ? 'block' : 'hidden'">
         <div class="relative w-[550px]">
-            <button class="absolute -top-[36px] right-0" @click="product.showLightbox"
+            <button class="absolute -top-[36px] right-0" @click="product.lightboxShow = false"
                 @mouseenter="fillColor = 'hsl(26, 100%, 55%)'" @mouseleave="fillColor = '#fff'">
                 <Svg :width="14" :height="15">
                     <path
@@ -30,7 +30,7 @@
             <div class=" product-images-navigation flex justify-between w-[445px] mx-auto">
                 <button v-for="(item, index) in productGallery" :key="index"
                     class="product-button group w-[92px] rounded-[10px] overflow-hidden" @click="setImgUrl($event)">
-                    <figure class="bg-white">
+                    <figure>
                         <img :src="item.image" :alt="index" class="product-image"
                             :class="{ 'active': item.image === imageUrl }">
                     </figure>

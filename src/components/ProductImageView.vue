@@ -6,22 +6,14 @@
                     <img :src="product.mainImageUrl" alt="" class="rounded-[14px]" :class="styles">
                 </figure>
             </a>
-            <div class="product-images-navigation flex justify-between w-[445px] mx-auto">
-                <button v-for="(item, index) in product.images" :key="index"
-                    class="product-button group w-[92px] rounded-[10px] overflow-hidden"
-                    @click="product.setImageUrl($event)">
-                    <figure class="bg-white">
-                        <img :src="item.image" :alt="index" class="product-image"
-                            :class="{ 'active': item.image === product.mainImageUrl }">
-                    </figure>
-                </button>
-            </div>
+            <ProductListNavigation :product="product" />
         </div>
     </div>
 </template>
 
 <script setup>
 import { useProductStore } from '../stores/product';
+import ProductListNavigation from './ProductListNavigation.vue';
 
 defineProps({
     styles: String,
