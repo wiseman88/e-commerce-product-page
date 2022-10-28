@@ -30,7 +30,7 @@
             <div class=" product-images-navigation flex justify-between w-[445px] mx-auto">
                 <button v-for="(item, index) in productGallery" :key="index"
                     class="product-button group w-[92px] rounded-[10px] overflow-hidden" @click="setImgUrl($event)">
-                    <figure>
+                    <figure class="bg-white">
                         <img :src="item.image" :alt="index" class="product-image"
                             :class="{ 'active': item.image === imageUrl }">
                     </figure>
