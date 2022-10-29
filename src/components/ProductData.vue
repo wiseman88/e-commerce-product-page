@@ -1,13 +1,13 @@
 <template>
     <div class="product-info p-6 md:mt-[39px] md:mr-[23px] md:w-[494px]">
-        <h4 class="product-title text-orange text-[12px] uppercase tracking-widest font-bold mb-2 md:mb-6">
+        <h4 class="product-title text-orange text-[12px] uppercase tracking-widest font-bold mb-2 md:mb-5">
             <span>Sneaker Company</span>
         </h4>
-        <h2 class="text-very-dark-blue text-[36px] leading-8 md:leading-tight font-bold mb-4 md:mb-9">
+        <h2 class="text-very-dark-blue text-[44px] leading-6 md:leading-[3rem] font-bold mb-4 md:mb-7">
             {{ product.data.name }}
         </h2>
 
-        <p class="product-description text-dark-grayish-blue mb-6 md:mb-7">
+        <p class="product-description md:leading-[1.6rem] text-dark-grayish-blue mb-6 md:mb-7">
             {{ product.data.description }}
         </p>
 
