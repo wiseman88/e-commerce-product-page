@@ -14,17 +14,17 @@
                 <figure class="mb-[40px]">
                     <img :src="lightbox.mainImageUrl" :alt="lightbox.mainImageId" class="rounded-[14px] w-full">
                 </figure>
-                <button class="absolute top-1/2 -left-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white"
-                    @click="lightbox.prevImage">
-                    <figure>
-                        <img class="mx-auto mr-[16px] w-[9px]" src="../assets/images/icon-previous.svg" alt="prev">
-                    </figure>
+                <button class="arrow absolute top-[237px] -left-[28px] transform w-14 h-14 rounded-full bg-white"
+                    @click="lightbox.prevImage" @mouseenter="check($event)">
+                    <Svg :width="12" :height="18" class="ml-[22px]">
+                        <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
+                    </Svg>
                 </button>
-                <button class="absolute top-1/2 -right-5 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white"
+                <button class="arrow absolute top-[237px] -right-[28px] transform w-14 h-14 rounded-full bg-white"
                     @click="lightbox.nextImage">
-                    <figure>
-                        <img class="mx-auto ml-[16px] w-[9px]" src="../assets/images/icon-next.svg" alt="next">
-                    </figure>
+                    <Svg :width="12" :height="18" class="ml-[22px]">
+                        <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
+                    </Svg>
                 </button>
             </div>
             <ProductListNavigation :product="lightbox" />
@@ -46,5 +46,7 @@ let fillColor = ref('#fff');
 </script>
 
 <style scoped>
-
+.arrow:hover>svg>path {
+    stroke: hsl(26, 100%, 55%);
+}
 </style>
