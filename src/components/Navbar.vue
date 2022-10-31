@@ -19,7 +19,7 @@
         <div class="flex">
             <button class="relative mr-[22px] md:mr-[46px]" @click="header.showCart()">
                 <span v-if="product.inCart"
-                    class="absolute top-[-3px] right-[-6px] text-[9px] px-[7px] rounded-[6px] font-bold bg-orange text-white">
+                    class="absolute top-[-3px] md:top-2 right-[-6px] text-[9px] px-[7px] rounded-[6px] font-bold bg-orange text-white">
                     {{ counter.count }}
                 </span>
                 <SvgCart :width="22" :height="20" @mouseover="header.toggleColor(header.activeSvgColor)"
