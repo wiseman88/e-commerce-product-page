@@ -17,7 +17,7 @@
             </ul>
         </div>
         <div class="flex">
-            <button class="relative mr-[22px]" @click="header.showCart()">
+            <button class="relative mr-[22px] md:mr-[46px]" @click="header.showCart()">
                 <span v-if="product.inCart"
                     class="absolute top-[-3px] right-[-6px] text-[9px] px-[7px] rounded-[6px] font-bold bg-orange text-white">
                     {{ counter.count }}

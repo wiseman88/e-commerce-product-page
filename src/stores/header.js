@@ -6,9 +6,9 @@ export const useHeaderStore = defineStore({
         return {
             show: false,
             display: false,
-            activeSvgColor: '#69707D',
-            svgColor: 'hsl(220, 14%, 75%)',
-            fillColor: 'hsl(220, 14%, 75%)',
+            activeSvgColor: 'hsl(220, 13%, 13%)',
+            svgColor: 'hsl(219, 9%, 45%)',
+            fillColor: 'hsl(219, 9%, 45%)',
         }
     },
     getters: {
