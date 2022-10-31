@@ -1,6 +1,6 @@
 <template>
     <nav
-        class="px-6 pt-5 pb-6 md:px-0 md:pt-[28px] md:pb-[34px] md:border-grayish-blue md:border-b-[1px] flex items-center justify-between">
+        class="relative px-6 pt-5 pb-6 md:px-0 md:pt-[28px] md:pb-[34px] md:border-grayish-blue md:border-b-[1px] flex items-center justify-between">
         <div class="flex">
             <button class="md:hidden mr-4" @click="header.showSidebar()">
                 <img src="../assets/images/icon-menu.svg" alt="menu">
@@ -33,10 +33,12 @@
                 <img class="w-6 md:w-[50px]" src="../assets/images/image-avatar.png" alt="avatar">
             </button>
         </div>
+        <Cart :show="header.show" />
     </nav>
 </template>
 
 <script setup>
+import Cart from './Cart.vue';
 import SvgCart from './Svg.vue';
 
 const props = defineProps({
