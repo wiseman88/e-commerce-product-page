@@ -26,7 +26,7 @@
         </div>
         <div>
           <button @click="product.removeFromCart">
-            <img src="../assets/images/icon-delete.svg" alt="clear">
+            <img src="../src/assets/images/icon-delete.svg" alt="clear">
           </button>
         </div>
       </div>
