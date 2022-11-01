@@ -1,7 +1,7 @@
 <template>
     <div class="fixed flex items-center justify-center z-20 inset-0 bg-black/75"
         :class="product.lightboxShow ? 'block' : 'hidden'">
-        <div class="relative w-[550px]">
+        <div class="relative w-[550px] mt-[43px]">
             <button class="absolute -top-[36px] right-0" @click="product.lightboxShow = false"
                 @mouseenter="fillColor = 'hsl(26, 100%, 55%)'" @mouseleave="fillColor = '#fff'">
                 <Svg :width="14" :height="15">
