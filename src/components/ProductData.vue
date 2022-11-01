@@ -3,7 +3,7 @@
         <h4 class="product-title text-orange text-[12px] uppercase tracking-widest font-bold mb-2 md:mb-5">
             <span>Sneaker Company</span>
         </h4>
-        <h2 class="text-very-dark-blue text-[44px] leading-6 md:leading-[3rem] font-bold mb-4 md:mb-7">
+        <h2 class="text-very-dark-blue text-[29.5px] md:text-[44px] leading-9 md:leading-[3rem] font-bold mb-4 md:mb-7">
             {{ product.data.name }}
         </h2>
 
