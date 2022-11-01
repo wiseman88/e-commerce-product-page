@@ -34,7 +34,7 @@
                     </figure>
                 </button>
             </div>
-            <Button @click="checkProductCount">
+            <Button @click="checkProductCount" class="hover:bg-orange/50">
                 <figure class="mr-4">
                     <Svg :width="22" :height="20">
                         <path

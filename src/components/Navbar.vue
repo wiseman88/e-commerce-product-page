@@ -29,7 +29,7 @@
                         :fill="header.fillColor" fill-rule="nonzero" />
                 </SvgCart>
             </button>
-            <button>
+            <button class="border-2 border-white/0 hover:border-orange rounded-full">
                 <img class="w-6 md:w-[50px]" src="../assets/images/image-avatar.png" alt="avatar">
             </button>
         </div>
