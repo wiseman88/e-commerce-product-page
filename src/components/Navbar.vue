@@ -12,7 +12,7 @@
                 <li v-for="item in navigation" class="relative group mr-8 hover:text-very-dark-blue"><a href="#">{{
                         item.name
                 }}</a>
-                    <span class="absolute bottom-[-47px] left-0 h-1 w-full bg-transparent group-hover:bg-orange"></span>
+                    <span class="absolute bottom-[-49px] left-0 h-1 w-full bg-transparent group-hover:bg-orange"></span>
                 </li>
             </ul>
         </div>
