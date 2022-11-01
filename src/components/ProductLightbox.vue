@@ -15,7 +15,7 @@
                     <img :src="lightbox.mainImageUrl" :alt="lightbox.mainImageId" class="rounded-[14px] w-full">
                 </figure>
                 <button class="arrow absolute top-[237px] -left-[28px] transform w-14 h-14 rounded-full bg-white"
-                    @click="lightbox.prevImage" @mouseenter="check($event)">
+                    @click="lightbox.prevImage">
                     <Svg :width="12" :height="18" class="ml-[22px]">
                         <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
                     </Svg>
