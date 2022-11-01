@@ -1,4 +1,5 @@
 import { defineStore } from "pinia";
+import { useCounterStore } from "./counter";
 import { useLightboxStore } from "./lightbox";
 
 export const useProductStore = defineStore({
@@ -48,6 +49,10 @@ export const useProductStore = defineStore({
         addToCart() {
             this.inCart = true;
         },
+        checkProductCount(){
+            const counter = useCounterStore();
+            counter.count > 0 ? this.addToCart() : null
+        },
         removeFromCart() {
             this.inCart = false;
         },
@@ -60,6 +65,6 @@ export const useProductStore = defineStore({
             this.lightboxShow = !this.lightboxShow;
             lightbox.imgUrl = this.imgUrl;
             lightbox.imgId = this.imgId;
-        }
+        },
     }
 })

@@ -38,7 +38,7 @@
                     </Svg>
                 </button>
             </div>
-            <Button @click="checkProductCount" class="add-product-button hover:bg-orange/50">
+            <Button @click="product.checkProductCount" class="add-product-button hover:bg-orange/50">
                 <figure class="mr-4">
                     <Svg :width="22" :height="20" fill="#fff">
                         <path
@@ -61,9 +61,6 @@ import Button from "./Button.vue";
 const counter = useCounterStore();
 const product = useProductStore();
 
-const checkProductCount = () => {
-    counter.count > 0 ? product.addToCart() : null
-}
 </script>
 
 <style scoped>
