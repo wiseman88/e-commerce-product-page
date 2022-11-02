@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="product-image-main hidden md:block">
-            <button href="#" @click.prevent="product.showLightbox" class="flex justify-center">
+            <button @click.prevent="product.showLightbox" class="flex justify-center">
                 <img :src="product.mainImageUrl" alt="" class="rounded-[14px]" :class="styles">
             </button>
             <ProductListNavigation :product="product" />
