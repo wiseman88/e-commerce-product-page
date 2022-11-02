@@ -1,11 +1,8 @@
 <template>
-    <aside 
-        class="fixed top-0 left-0 z-10 bg-black/75 w-screen h-screen"
-        :class="display ? '' : 'hidden'"
-        >
+    <aside class="fixed top-0 left-0 z-10 bg-black/75 w-screen h-screen" :class="display ? '' : 'hidden'">
         <div class="relative bg-white h-screen w-[250px]">
             <button class="absolute left-[26px] top-[25px]" @click="$emit('closeSidebar')">
-                <img src="../assets/images/icon-close.svg" alt="close">
+                <img src="/images/icon-close.svg" alt="close">
             </button>
             <nav class="pt-[92px] pl-[26px]">
                 <ul class="font-bold text-very-dark-blue" style="font-size: 17px;">
@@ -19,17 +16,17 @@
 </template>
 
 <script setup>
-    const props = defineProps({
-        display: Boolean
-    })
+const props = defineProps({
+    display: Boolean
+})
 
-    const navigation = [
-        {name: 'Collections'}, 
-        {name: 'Men'}, 
-        {name: 'Woman'}, 
-        {name: 'About'},
-        {name: 'Contact'}
-    ]
+const navigation = [
+    { name: 'Collections' },
+    { name: 'Men' },
+    { name: 'Woman' },
+    { name: 'About' },
+    { name: 'Contact' }
+]
 </script>
 
 <style scoped>

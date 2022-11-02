@@ -1,7 +1,6 @@
 <template>
     <header>
         <Navbar :header="header" :product="product" :counter="counter" />
-        <!-- <Cart :show="header.show" /> -->
     </header>
     <Sidebar @closeSidebar="header.showSidebar()" :display="header.display" />
 </template>
@@ -10,7 +9,6 @@
 import { useCounterStore } from '../stores/counter';
 import { useProductStore } from '../stores/product';
 import { useHeaderStore } from '../stores/header';
-import Cart from './Cart.vue';
 import Sidebar from './Sidebar.vue';
 import Navbar from './Navbar.vue';
 

@@ -3,10 +3,10 @@
         class="relative px-6 pt-5 pb-6 md:px-0 md:pt-[28px] md:pb-[34px] md:border-grayish-blue md:border-b-[1px] flex items-center justify-between">
         <div class="flex">
             <button class="md:hidden mr-4" @click="header.showSidebar()">
-                <img src="../assets/images/icon-menu.svg" alt="menu">
+                <img src="/images/icon-menu.svg" alt="menu">
             </button>
             <span class="md:mr-14">
-                <img src="../assets/images/logo.svg" alt="logo">
+                <img src="/images/logo.svg" alt="logo">
             </span>
             <ul class="hidden md:flex text-dark-grayish-blue">
                 <li v-for="item in navigation" class="relative group mr-8 hover:text-very-dark-blue"><a href="#">{{
@@ -30,7 +30,7 @@
                 </SvgCart>
             </button>
             <button class="border-2 border-white/0 hover:border-orange rounded-full">
-                <img class="w-6 md:w-[50px]" src="../assets/images/image-avatar.png" alt="avatar">
+                <img class="w-6 md:w-[50px]" src="/images/image-avatar.png" alt="avatar">
             </button>
         </div>
         <Cart :show="header.show" />

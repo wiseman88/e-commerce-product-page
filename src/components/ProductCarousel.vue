@@ -10,13 +10,13 @@
                 <button class="absolute top-1/2 left-4 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white"
                     @click="currentSlide--">
                     <figure>
-                        <img class="mx-auto mr-[16px] w-[9px]" src="../assets/images/icon-previous.svg" alt="prev">
+                        <img class="mx-auto mr-[16px] w-[9px]" src="/images/icon-previous.svg" alt="prev">
                     </figure>
                 </button>
                 <button class="absolute top-1/2 right-4 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white"
                     @click="currentSlide++">
                     <figure>
-                        <img class="mx-auto ml-[16px] w-[9px]" src="../assets/images/icon-next.svg" alt="next">
+                        <img class="mx-auto ml-[16px] w-[9px]" src="/images/icon-next.svg" alt="next">
                     </figure>
                 </button>
             </div>
@@ -28,7 +28,7 @@
 
 <script setup>
 import 'vue3-carousel/dist/carousel.css'
-import { Carousel, Slide, Navigation } from 'vue3-carousel'
+import { Carousel, Slide } from 'vue3-carousel'
 import { ref } from 'vue';
 import ProductLightbox from './ProductLightbox.vue';
 import { useProductStore } from '../stores/product';
