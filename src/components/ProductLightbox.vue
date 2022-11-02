@@ -11,9 +11,7 @@
                 </Svg>
             </button>
             <div class="relative">
-                <figure class="mb-[40px]">
-                    <img :src="lightbox.mainImageUrl" :alt="lightbox.mainImageId" class="rounded-[14px] w-full">
-                </figure>
+                <img :src="lightbox.mainImageUrl" :alt="lightbox.mainImageId" class="rounded-[14px] mb-[40px] w-full">
                 <button class="arrow absolute top-[237px] -left-[28px] transform w-14 h-14 rounded-full bg-white"
                     @click="lightbox.prevImage">
                     <Svg :width="12" :height="18" class="ml-[22px]">

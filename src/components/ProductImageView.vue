@@ -1,11 +1,9 @@
 <template>
     <div>
         <div class="product-image-main hidden md:block">
-            <a href="#" @click.prevent="product.showLightbox" class="flex justify-center">
-                <figure>
-                    <img :src="product.mainImageUrl" alt="" class="rounded-[14px]" :class="styles">
-                </figure>
-            </a>
+            <button href="#" @click.prevent="product.showLightbox" class="flex justify-center">
+                <img :src="product.mainImageUrl" alt="" class="rounded-[14px]" :class="styles">
+            </button>
             <ProductListNavigation :product="product" />
         </div>
     </div>

@@ -9,15 +9,11 @@
             <div>
                 <button class="absolute top-1/2 left-4 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white"
                     @click="currentSlide--">
-                    <figure>
-                        <img class="mx-auto mr-[16px] w-[9px]" src="/images/icon-previous.svg" alt="prev">
-                    </figure>
+                    <img class="mx-auto mr-[16px] w-[9px]" src="/images/icon-previous.svg" alt="prev">
                 </button>
                 <button class="absolute top-1/2 right-4 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white"
                     @click="currentSlide++">
-                    <figure>
-                        <img class="mx-auto ml-[16px] w-[9px]" src="/images/icon-next.svg" alt="next">
-                    </figure>
+                    <img class="mx-auto ml-[16px] w-[9px]" src="/images/icon-next.svg" alt="next">
                 </button>
             </div>
         </div>
