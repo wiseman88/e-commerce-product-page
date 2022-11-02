@@ -1,7 +1,12 @@
 ## E-commerce-product-page
 
-[Mobile Design preview](/design/mobile-design.jpg)
-[Desktop Design preview](/design/desktop-preview.jpg)
+## Design
+
+### Mobile version
+![Mobile Design preview](/design/mobile-design.jpg)
+
+### Desktop version
+![Desktop Design preview](/design/desktop-preview.jpg)
 
 ## Overview
 
